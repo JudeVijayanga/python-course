@@ -18,11 +18,9 @@ A Python tool to generate **spectral energy distributions (SEDs)** from galaxy p
 genSED/
 │
 ├── genSED.py # Main program: generates SEDs
-├── input.py # Reads and processes photometric input
-├── checkpoint.py # Handles read/write of checkpoint (HDF5) files
 ├── utils/ # Utility functions and helpers
-│ ├── init.py
-│ └── helpers.py
+│ ├──  checkpoint.py # Handles read/write of checkpoint (HDF5) files
+│ └── input.py # Reads and processes photometric input
 ├── tests/ # Unit tests (optional)
 └── README.md
 
@@ -37,6 +35,23 @@ The **Casey (2012)** far-infrared SED model combines a *modified greybody* and a
 
 S(ν) ∝ [1 − exp(−τ(ν))] × B(ν, T) + A × ν^(−α)
 
+
+where:
+- **B(ν, T)** — Planck function at temperature T  
+- **τ(ν)** — optical depth = (ν / ν₀)^β  
+- **β** — dust emissivity index (typically ~1.6)  
+- **α** — mid-IR power-law slope (typically ~2.0)  
+- **A** — normalization constant ensuring continuity at the transition point
+
+This function captures both the **thermal emission from dust** and the **warmer mid-IR continuum**.
+
+### FIR Luminosity
+
+The total FIR luminosity is computed by integrating the rest-frame SED from **8 μm to 1000 μm**:
+
+L_FIR = 4π × D_L² × ∫₈₋₁₀₀₀μm S(ν) dν
+
+
 where **D_L** is the luminosity distance.
 
 ### UV Luminosity
@@ -50,6 +65,7 @@ The **UV luminosity** is derived from the SED at the rest-frame wavelength of **
 Clone the repository and install locally:
 
 ```bash
-git clone https://github.com/<your-username>/genSED.git
+git clone https://github.com/JudeVijayanga/genSED.git
 cd genSED
 python3 -m pip install --no-build-isolation -v .
+
