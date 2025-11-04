@@ -65,7 +65,7 @@ The **UV luminosity** is derived from the SED at the rest-frame wavelength of **
 Clone the repository and install locally:
 
 ```bash
-git clone https://github.com/JudeVijayanga/genSED.git
+git clone https://github.com/JudeVijayanga/python-course.git
 cd genSED
 python3 -m pip install --no-build-isolation -v .
 
