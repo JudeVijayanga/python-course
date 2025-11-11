@@ -15,6 +15,7 @@ A Python tool to generate **spectral energy distributions (SEDs)** from galaxy p
 ---
 
 ## 🧱 Project Structure
+```
 genSED/
 │
 ├── genSED.py # Main program: generates SEDs
@@ -23,6 +24,7 @@ genSED/
 │ └── input.py # Reads and processes photometric input
 ├── tests/ # Unit tests (optional)
 └── README.md
+```
 
 
 ---
@@ -32,9 +34,10 @@ genSED/
 The **Casey (2012)** far-infrared SED model combines a *modified greybody* and a *mid-infrared power-law* component.
 
 ### Functional Form
+```math
+S(\nu) \propto \left[ 1 - e^{-\tau(\nu)} \right] \, B(\nu, T) + A \, \nu^{-\alpha}
 
-S(ν) ∝ [1 − exp(−τ(ν))] × B(ν, T) + A × ν^(−α)
-
+```
 
 where:
 - **B(ν, T)** — Planck function at temperature T  
@@ -49,8 +52,10 @@ This function captures both the **thermal emission from dust** and the **warmer 
 
 The total FIR luminosity is computed by integrating the rest-frame SED from **8 μm to 1000 μm**:
 
-L_FIR = 4π × D_L² × ∫₈₋₁₀₀₀μm S(ν) dν
+```math
+L_{\mathrm{FIR}} = 4\pi D_{L}^{2} \int_{8\,\mu\mathrm{m}}^{1000\,\mu\mathrm{m}} S(\nu)\, d\nu
 
+```
 
 where **D_L** is the luminosity distance.
 
