@@ -12,6 +12,7 @@ A Python tool to generate **spectral energy distributions (SEDs)** from galaxy p
 - **Dust temperature** (K) using the modified greybody + power-law SED formulation from *Casey (2012)*.  
 - **UV luminosity** (L☉) evaluated at rest-frame 1500 Å.
 
+![genSED](best_sed_1_s110.png)
 ---
 
 ## 🧱 Project Structure
