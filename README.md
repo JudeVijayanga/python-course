@@ -77,3 +77,10 @@ Clone the repository and install locally:
 git clone https://github.com/<your-username>/genSED.git
 cd genSED
 python3 -m pip install --no-build-isolation -v .
+```
+
+## How to use
+
+Before you run sed.py, you must put your input.txt file into the supplements folder. The first column should be wavelength in units of micrometers, and the second column should be fluxes in units of mJy from any simulation.
+Generated SED and the physical parameters will be saved in output folder.
+
