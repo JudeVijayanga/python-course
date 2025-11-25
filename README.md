@@ -3,7 +3,7 @@
 
 A Python tool to generate **spectral energy distributions (SEDs)** from galaxy photometry and compute **FIR luminosity**, **dust temperature**, and **UV luminosity** using the *Casey (2012)* model.
 
-![Solar system](solar_system.png)
+![SED](best_sed_1_s110.png)
 
 ---
 
