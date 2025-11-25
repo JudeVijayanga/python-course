@@ -4,7 +4,7 @@ version = "0.0.1"
 description = "My awsome Python project."
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = ["h5py"]
+dependencies = ["matplotlib","numpy","astropy","scipy"]
 authors = [
     {name = "Jude Wijesekera", email = "vijayanga18@gmail.com"},
 ]
